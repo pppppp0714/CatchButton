@@ -58,29 +58,29 @@ namespace CatchButton
         // 이벤트 : 20회 도달 시 알림 및 효과음
         private void Form1_TwentyMovesReached(object? sender, EventArgs e)
         {
-            // 게임 오버 처리: 효과음, 메시지, 버튼 비활성화
+            // 1. 게임 오버 처리: 효과음, 메시지, 버튼 비활성화
             SystemSounds.Exclamation.Play();
             System.Windows.Forms.MessageBox.Show("Game Over");
             isGameOver = true;
             thiefbutton.Enabled = false;
-            // 재도전 버튼 보이기
+            // 2. 재도전 버튼 보이기
             retryButton.Visible = true;
         }
 
-        // 재도전 버튼 클릭 시 초기 상태로 리셋
         private void retryButton_Click(object? sender, EventArgs e)
         {
-            // 상태 초기화
+            // 1. 상태 초기화
             score = 0;
             moveCount = 0;
             twentyEventFired = false;
             isGameOver = false;
-            // 버튼 활성화 및 원래 크기/폰트 복원
+            // 2. 버튼 활성화 및 원래 크기로 변경, 위치 초기화
             thiefbutton.Enabled = true;
             thiefbutton.Size = new Size(266, 122);
-            // retry 버튼 숨김
+            thiefbutton.Location = new Point(267, 164);
+            // 3. retry 버튼 숨김
             retryButton.Visible = false;
-            // 폼 타이틀 초기화
+            // 4. 폼 타이틀 초기화
             this.Text = "Form1";
         }
 
