@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             thiefbutton = new Button();
+            retryButton = new Button();
             SuspendLayout();
             // 
             // thiefbutton
@@ -45,11 +46,23 @@
             thiefbutton.Click += thiefbutton_Click;
             thiefbutton.MouseEnter += thiefbutton_MouseEnter;
             // 
+            // retryButton
+            // 
+            retryButton.Location = new Point(12, 12);
+            retryButton.Name = "retryButton";
+            retryButton.Size = new Size(100, 40);
+            retryButton.TabIndex = 1;
+            retryButton.Text = "다시 시작";
+            retryButton.UseVisualStyleBackColor = true;
+            retryButton.Visible = false;
+            retryButton.Click += retryButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(retryButton);
             Controls.Add(thiefbutton);
             Name = "Form1";
             Text = "Form1";
@@ -59,5 +72,6 @@
         #endregion
 
         private Button thiefbutton;
+        private Button retryButton;
     }
 }
