@@ -42,6 +42,7 @@
             thiefbutton.TabIndex = 0;
             thiefbutton.Text = "나를 잡아봐";
             thiefbutton.UseVisualStyleBackColor = false;
+            thiefbutton.Click += thiefbutton_Click;
             thiefbutton.MouseEnter += thiefbutton_MouseEnter;
             // 
             // Form1

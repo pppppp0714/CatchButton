@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace CatchButton
 {
     public partial class Form1 : Form
@@ -23,6 +25,16 @@ namespace CatchButton
             thiefbutton.Location = new Point(nextX, nextY);
             // 5. 시각적 피드백(폼 제목 표시줄에 좌표 출력)
             this.Text = $"버튼위치: ({nextX}, {nextY})";
+            // 6. 도망갔을 시의 효과음 출력
+            SystemSounds.Beep.Play();
+        }
+
+        private void thiefbutton_Click(object sender, EventArgs e)
+        {
+            // 1. 성공 효과음 재생
+            SystemSounds.Asterisk.Play();
+            // 2. 메시지박스 표시
+            System.Windows.Forms.MessageBox.Show("축하합니다~!");
         }
     }
 }
